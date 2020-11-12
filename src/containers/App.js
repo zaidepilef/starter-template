@@ -12,6 +12,8 @@ import AppLocale from '../lngProvider';
 import MainApp from 'app/index';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
+import VerificaClaveUnica from './VerificaClaveUnica';
+import Claveucl from './Claveucl';
 import { setInitUrl } from '../actions/Auth';
 import RTL from 'util/RTL';
 import asyncComponent from 'util/asyncComponent';
@@ -73,7 +75,8 @@ class App extends Component {
                   <RestrictedRoute path={`${match.url}app`} authUser={authUser} component={MainApp} />
                   <Route path='/signin' component={SignIn} />
                   <Route path='/signup' component={SignUp} />
-                  <Route path='/varificaclaveunica' component={SignUp} />
+                  <Route path='/verificaclaveunica' component={VerificaClaveUnica} />
+                  <Route path='/claveucl' component={Claveucl} />
                   <Route component={asyncComponent(() => import('components/Error404'))} />
                 </Switch>
               </div>

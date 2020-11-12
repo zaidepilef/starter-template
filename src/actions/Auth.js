@@ -20,6 +20,15 @@ import {
     SIGNUP_USER_SUCCESS
 } from 'constants/ActionTypes';
 
+const { URL_APP } = process.env;
+export const loginToken = (token) => {
+    localStorage.setItem('user_id', token);
+    let str_url = URL_APP;
+    console.log("str_url", process.env.URL_APP)
+    window.location.href = "http://localhost:3000/"
+}
+
+
 export const userSignUp = (user) => {
     return {
         type: SIGNUP_USER,
@@ -31,6 +40,16 @@ export const userSignIn = (user) => {
         type: SIGNIN_USER,
         payload: user
     };
+};
+
+//userSignInClaveUnica
+export const userSignInClaveUnica = (objeto) => {
+    console.log('objeto :', objeto);
+    localStorage.setItem('user_id', objeto.token);
+    return {
+        type: SIGNIN_USER_SUCCESS,
+        payload: objeto.data_tokenjwt
+    }
 };
 export const userSignOut = () => {
     return {

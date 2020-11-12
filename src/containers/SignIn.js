@@ -17,14 +17,9 @@ import {
   userTwitterSignIn
 } from 'actions/Auth';
 
+
 const routeChange = () => {
   // ENV 
-  // http%3A%2F%2Flocalhost%3A2023%2Fverificaclaveunica
-  // http%3A%2F%2Flocalhost%3A2023%2Fverificaclaveunica
-
-  // http%3A%2F%2Flocalhost%3A2023%2Fverificaclaveunica%2F
-  // http%3A%2F%2Flocalhost%3A3000%2Fverificaclaveunica
-  // http%3A%2F%2Flocalhost%3A3000%2Fverificaclaveunica
   window.location.href = "http://localhost:8080/openid-connect-server-webapp/authorize?response_type=code&client_id=client&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fverificaclaveunica%2F&scope=openid+email&state=uFEuiLeCJta86RGZtyQwTwEtLU2x2W&nonce=Y6I6hHvF0xzSKn6yEmLl"
 }
 
@@ -104,6 +99,10 @@ class SignIn extends React.Component {
                     <Link to="/signup">
                       <IntlMessages id="signIn.signUp" />
                     </Link>
+
+                    <Button onClick={routeChange} variant="contained" color="primary">
+                      Clave Unica
+                    </Button>
                   </div>
 
                   <div className="app-social-block my-1 my-sm-3">
